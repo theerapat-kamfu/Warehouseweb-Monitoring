@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@model Warehouseweb2.Models.OverviewDetailsView
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/details.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_backward" />
+
+</head>
+<body>
+
+    <div class="main-card">
+
+        <div class="main-title">📍@Model.LocationDetails.location_name</div>
+        <div class="location-id">Location ID: @Model.LocationDetails.location_id</div>
+
+        <div class="sub-cards">
+            <div class="sub-card">
+                <div class="label">Quantity</div>
+                <div class="value">@String.Format("{0:N0}", Model.LocationDetails.quantity)</div>
+                <div class="unit">@Model.LocationDetails.unit</div>
+            </div>
+            <div class="sub-card">
+                <div class="label">Capacity</div>
+                <div class="value">@String.Format("{0:N0}", Model.LocationDetails.capacity)</div>
+                <div class="unit"> @Model.LocationDetails.unit</div>
+            </div>
+            <div class="sub-card">
+                <div class="label">Status</div>
+                <div class="value">Active</div>
+                <div class="unit">Last checked: Today</div>
+            </div>
+        </div>
+
+        <div class="back-button-container">
+            <button onclick="history.back()">
+                <span class="material-symbols-outlined">
+                    chevron_backward
+                </span>
+                Back
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>

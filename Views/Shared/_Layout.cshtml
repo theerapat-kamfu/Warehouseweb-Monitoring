@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Warehouseweb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Warehouseweb2.styles.css" asp-append-version="true" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    
+    <header>
+        <div class="bubble-container"> </div>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-wrapper">
+                    <svg class="cube-icon-advanced" viewBox="0 0 100 100">
+                        <defs>
+                            <radialGradient id="ringGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                                <stop offset="0%" style="stop-color:rgb(240,248,255);stop-opacity:0.0;" />
+                                <stop offset="60%" style="stop-color:rgb(173,216,230);stop-opacity:0.6;" />
+                                <stop offset="100%" style="stop-color:rgb(135,206,235);stop-opacity:0.0;" />
+                            </radialGradient>
+                        </defs>
+
+                        <path class="ring-gradient-fill ring1"
+                              d="M50 0 A50 50 0 0 1 100 50 L90 50 A40 40 0 0 0 50 10 Z" />
+                        <path class="ring-gradient-fill ring2"
+                              d="M100 50 A50 50 0 0 1 50 100 L50 90 A40 40 0 0 0 90 50 Z" />
+                        <path class="ring-gradient-fill ring3"
+                              d="M50 100 A50 50 0 0 1 0 50 L10 50 A40 40 0 0 0 50 90 Z" />
+                        <path class="ring-gradient-fill ring4"
+                              d="M0 50 A50 50 0 0 1 50 0 L50 10 A40 40 0 0 0 10 50 Z" />
+
+                        <polygon class="top-face" points="50,25 75,40 50,55 25,40" />
+                        <polygon class="left-face" points="25,40 25,65 50,80 50,55" />
+                        <polygon class="right-face" points="75,40 75,65 50,80 50,55" />
+                    </svg>
+                </div>
+                <div class="logo-text-realtime">Warehouse Monitoring</div>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="sidebar-item"> Dashboard </a>
+                </li> 
+                <li>
+                    <a asp-area="" asp-controller="Location" asp-action="Location" class="sidebar-item"> Location </a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Incoming" asp-action="Incoming" class="sidebar-item"> Incoming </a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Outgoing" asp-action="Outgoing" class="sidebar-item"> Outgoing </a>
+                </li>
+            </ul>
+            <div class="user-profile-section">
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1565891741441-64926e441838?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Avatar">
+                    <div class="user-info">
+                        <span class="name">LG</span>
+                        <span class="role">LOGISTICS</span>
+                    </div>
+                </div>
+                <div class="settings-icon-container">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

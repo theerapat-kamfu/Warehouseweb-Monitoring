@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Incoming";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="~/css/incoming.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <div class="card-center-wrapper">
+            <div class="card">
+                <div class="card-content">
+                <h3 class="card-title"> 🗂️ Incoming Data</h3>
+                <p class="card-description">Latest records that have been submitted to the system and are ready for review.</p>
+
+                <div class="table-responsive">
+                    <table id="incomingTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Supplier Name</th>
+                                <th>Expected Quantity</th>
+                                <th>Expected Arrival Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination-container">
+                    <button id="prevPage" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span id="pageInfo">Page 1 of 1</span>
+                    <button id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/incoming.js" asp-append-version="true"></script>
+</body>
+</html>
